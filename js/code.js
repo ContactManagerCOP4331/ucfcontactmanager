@@ -91,7 +91,7 @@ function doSignup() {
             lastName = jsonObject.lastName;
             saveCookie();
             document.getElementById("signupResult").innerHTML = "User added";
-            window.location.href = "color.html";
+            window.location.href = "contact.html";
             return;
         }
 
@@ -334,6 +334,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
