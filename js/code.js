@@ -79,7 +79,7 @@ function doSignup() {
     };
 
     let jsonPayload = JSON.stringify(tmp);
-    let url = urlBase + '/Signup.' + extension;
+    let url = urlBase + '/SignUp.' + extension;
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -344,5 +344,6 @@ function searchColor()
 	}
 	
 }
+
 
 
