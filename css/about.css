@@ -22,14 +22,3 @@
   }
 }
 
-html, body { min-height: 100%; }
-body {
-  background: linear-gradient(to bottom right, #000000, #111827, #000000);
-  color: #fff;
-}
-
-/* ensure no container overrides it */
-main, #top-row, #bottom-row { background: transparent !important; }
-
-/* if you set any background on nav/header/footer, make it transparent or the same gradient */
-header, footer { background: transparent; }
