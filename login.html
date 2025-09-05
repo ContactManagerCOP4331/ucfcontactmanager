@@ -373,7 +373,7 @@
               <div id="loginResult" class="text-sm text-red-400 h-5"></div>
               <div id="authResult" class="text-sm h-5"></div>
 
-              <button id="main-action-btn" class="yellow-button w-full py-3" onclick="doLogin()">
+              <button id="main-action-btn" class="yellow-button w-full py-3">
                 Sign In
               </button>
             </div>
@@ -398,6 +398,7 @@
                 signupTabBtn.classList.remove("yellow-button");
                 signupTabBtn.classList.add("dark-button");
                 mainActionBtn.textContent = "Sign In";
+                mainActionBtn.onclick = doSignup
                 formTitle.textContent = "Sign in to your account";
                 welcomeMessage.textContent = "Welcome Back";
               };
