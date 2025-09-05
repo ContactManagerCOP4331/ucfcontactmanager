@@ -1,4 +1,17 @@
 /* Simple entrance animation to mimic the React version's staggered reveal */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, black, gold);
+  color: white;
+  font-family: "MedievalSharp", "Times New Roman", serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
