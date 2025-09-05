@@ -12,6 +12,8 @@ body {
   overflow-x: hidden;
 }
 
+html, body { min-height: 100%; }
+
 @keyframes fade-up {
   from {
     opacity: 0;
