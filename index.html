@@ -1,31 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="https://github.com/ContactManagerCOP4331/ucfcontactmanager">GitHub</a>
-            <a href="About.html">About Us</a>
-            <a>Login</a>
-        </nav>
+      <!-- Wave Background -->
+      <div class="wave-background">
+        <!-- Multiple wave layers filling the screen -->
+        <svg
+          class="wave-layer wave-layer-1"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: #667eea; stop-opacity: 0.8"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #764ba2; stop-opacity: 0.6"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #f093fb; stop-opacity: 0.4"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradient1)"
+            d="M0,160 C300,300 600,0 900,160 C1050,240 1200,80 1200,80 L1200,800 L0,800 Z"
+          />
+        </svg>
+
+        <svg
+          class="wave-layer wave-layer-2"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: #4facfe; stop-opacity: 0.7"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #00f2fe; stop-opacity: 0.5"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #43e97b; stop-opacity: 0.3"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradient2)"
+            d="M0,320 C400,200 800,400 1200,300 L1200,800 L0,800 Z"
+          />
+        </svg>
+
+        <svg
+          class="wave-layer wave-layer-3"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: #fa709a; stop-opacity: 0.6"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #fee140; stop-opacity: 0.4"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #ffecd2; stop-opacity: 0.2"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradient3)"
+            d="M0,480 C200,380 400,580 600,480 C800,380 1000,580 1200,480 L1200,800 L0,800 Z"
+          />
+        </svg>
+
+        <svg
+          class="wave-layer wave-layer-4"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: #a8edea; stop-opacity: 0.5"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #fed6e3; stop-opacity: 0.3"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #d299c2; stop-opacity: 0.2"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradient4)"
+            d="M0,120 C150,200 450,40 600,120 C750,200 1050,40 1200,120 L1200,800 L0,800 Z"
+          />
+        </svg>
+
+        <svg
+          class="wave-layer wave-layer-5"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: #ffecd2; stop-opacity: 0.4"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #fcb69f; stop-opacity: 0.3"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #667eea; stop-opacity: 0.1"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradient5)"
+            d="M0,600 C300,500 900,700 1200,600 L1200,800 L0,800 Z"
+          />
+        </svg>
+
+        <svg
+          class="wave-layer wave-layer-6"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop
+                offset="0%"
+                style="stop-color: #ffcb0a; stop-opacity: 0.3"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #ffffff; stop-opacity: 0.2"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #000000; stop-opacity: 0.1"
+              />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradient6)"
+            d="M0,240 C250,340 550,140 800,240 C950,300 1100,180 1200,240 L1200,800 L0,800 Z"
+          />
+        </svg>
+      </div>
+      <nav>
+        <a href="index.html" class="sparkle-button">
+          <!-- Sparkles -->
+          <svg
+            class="sparkle sparkle-1"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-2"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-3"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+
+          <!-- Home Icon -->
+          <svg
+            class="home-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+            ></path>
+          </svg>
+
+          <span>Home</span>
+        </a>
+
+        <a
+          href="https://github.com/ContactManagerCOP4331/ucfcontactmanager"
+          class="sparkle-button"
+        >
+          <!-- Sparkles -->
+          <svg
+            class="sparkle sparkle-1"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-2"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-3"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+
+          <!-- GitHub Icon -->
+          <svg
+            class="github-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m3 0V7a2 2 0 012-2h4a2 2 0 012 2v12m-3 0V7a2 2 0 00-2-2H9a2 2 0 00-2 2v12"
+            ></path>
+          </svg>
+
+          <span>GitHub</span>
+        </a>
+
+        <a href="About.html" class="sparkle-button">
+          <!-- Sparkles -->
+          <svg
+            class="sparkle sparkle-1"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-2"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-3"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+
+          <!-- Info Icon -->
+          <svg
+            class="info-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+
+          <span>About Us</span>
+        </a>
+
+        <a href="login.html" class="sparkle-button">
+          <!-- Sparkles -->
+          <svg
+            class="sparkle sparkle-1"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-2"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+          <svg
+            class="sparkle sparkle-3"
+            viewBox="0 0 96 96"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z"
+              fill="white"
+            />
+          </svg>
+
+          <!-- Login Icon -->
+          <svg
+            class="login-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+            ></path>
+          </svg>
+
+          <span>Login</span>
+        </a>
+      </nav>
     </header>
 
     <main>
-        <h1>PegasusPages</h1>
-        <img src="pegasus.png" alt="Pegasus">
+      <h1>PegasusPages</h1>
+      <img src="pegasus.png" alt="Pegasus" />
     </main>
-</body>
-<footer>
+  </body>
+  <footer>
     <p>&copy; 2025 PegasusPages. All rights reserved.</p>
-</footer>
+  </footer>
 </html>
+
+
 
 
