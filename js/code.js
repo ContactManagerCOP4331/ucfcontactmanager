@@ -110,6 +110,114 @@ function doSignup() {
     xhr.send(jsonPayload);
 }
 
+function validLoginForm(logName, logPass) {
+
+    var logNameErr = logPassErr = true;
+
+    if (logName == "") {
+        console.log("USERNAME IS BLANK");
+    }
+    else {
+        var regex = /(?=.*[a-zA-Z])[a-zA-Z0-9-_]{3,18}$/;
+
+        if (regex.test(logName) == false) {
+            console.log("USERNAME IS NOT VALID");
+        }
+
+        else {
+
+            console.log("USERNAME IS VALID");
+            logNameErr = false;
+        }
+    }
+
+    if (logPass == "") {
+        console.log("PASSWORD IS BLANK");
+        logPassErr = true;
+    }
+    else {
+        var regex = /(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}/;
+
+        if (regex.test(logPass) == false) {
+            console.log("PASSWORD IS NOT VALID");
+        }
+
+        else {
+
+            console.log("PASSWORD IS VALID");
+            logPassErr = false;
+        }
+    }
+
+    if ((logNameErr || logPassErr) == true) {
+        return false;
+    }
+    return true;
+
+}
+
+function validSignUpForm(fName, lName, user, pass) {
+
+    var fNameErr = lNameErr = userErr = passErr = true;
+
+    if (fName == "") {
+        console.log("FIRST NAME IS BLANK");
+    }
+    else {
+        console.log("first name IS VALID");
+        fNameErr = false;
+    }
+
+    if (lName == "") {
+        console.log("LAST NAME IS BLANK");
+    }
+    else {
+        console.log("LAST name IS VALID");
+        lNameErr = false;
+    }
+
+    if (user == "") {
+        console.log("USERNAME IS BLANK");
+    }
+    else {
+        var regex = /(?=.*[a-zA-Z])([a-zA-Z0-9-_]).{3,18}$/;
+
+        if (regex.test(user) == false) {
+            console.log("USERNAME IS NOT VALID");
+        }
+
+        else {
+
+            console.log("USERNAME IS VALID");
+            userErr = false;
+        }
+    }
+
+    if (pass == "") {
+        console.log("PASSWORD IS BLANK");
+    }
+    else {
+        var regex = /(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}/;
+
+        if (regex.test(pass) == false) {
+            console.log("PASSWORD IS NOT VALID");
+        }
+
+        else {
+
+            console.log("PASSWORD IS VALID");
+            passErr = false;
+        }
+    }
+
+    if ((fNameErr || lNameErr || userErr || passErr) == true) {
+        return false;
+
+    }
+
+    return true;
+}
+
 
 function saveCookie()
 {
@@ -236,4 +344,5 @@ function searchColor()
 	}
 	
 }
+
 
