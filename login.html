@@ -25,6 +25,7 @@
           <title>PegasusPages Login</title>
           <!-- Tailwind CSS CDN -->
           <script src="https://cdn.tailwindcss.com"></script>
+          <script src="../js/code.js"></script>
           <!-- External CSS file -->
           <link rel="stylesheet" href="../css/styles.css" />
         </head>
@@ -144,7 +145,7 @@
               <span>GitHub</span>
             </a>
 
-            <a href="About.html" class="sparkle-button">
+            <a href="about.html" class="sparkle-button">
               <!-- Sparkles -->
               <svg
                 class="sparkle sparkle-1"
@@ -368,6 +369,8 @@
                   />
                 </div>
               </div>
+
+              <div id="loginResult" class="text-sm text-red-400 h-5"></div>
 
               <button id="main-action-btn" class="yellow-button w-full py-3" onclick="doLogin()">
                 Sign In
