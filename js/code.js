@@ -218,6 +218,35 @@ function validSignUpForm(fName, lName, user, pass) {
     return true;
 }
 
+function setStatus(msg) {
+  const out = document.getElementById("authResult");
+  if (out) out.textContent = msg; 
+}
+
+
+setStatus(""); 
+
+if (!firstName || !lastName || !username || !password) {
+  setStatus("Please fill in all fields.");
+  return;
+}
+
+xhr.onreadystatechange = function () {
+  if (this.readyState !== 4) return;
+
+  if (this.status === 409) {
+    setStatus("Username is already taken.");
+    return;
+  }
+  if (this.status === 200 || this.status === 201) {
+    setStatus("User added");
+    
+    return;
+  }
+  setStatus("Signup failed.");
+};
+
+
 
 function saveCookie()
 {
@@ -344,6 +373,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
