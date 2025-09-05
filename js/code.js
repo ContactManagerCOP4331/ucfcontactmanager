@@ -58,6 +58,59 @@ function doLogin()
 
 }
 
+function doSignup() {
+    firstName = document.getElementById("first-name").value;   // not "firstName"
+    lastName  = document.getElementById("last-name").value;    // not "lastName"
+    let username = document.getElementById("signup-username").value; // not "username"
+    let password = document.getElementById("signup-password").value; // not "password"
+
+    if (!validSignUpForm(firstName, lastName, username, password)) {
+        document.getElementById("signupResult").innerHTML = "Invalid signup";
+        return;
+    }
+
+    let hash = md5(password);  // your md5.js must be loaded in <script> before this runs
+
+    let tmp = {
+        firstName: firstName,
+        lastName: lastName,
+        login: username,
+        password: hash
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+    let url = urlBase + '/Signup.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState !== 4) return;
+
+        if (this.status === 409) {
+            document.getElementById("signupResult").innerHTML = "User already exists";
+            return;
+        }
+
+        if (this.status === 200 || this.status === 201) {
+            let jsonObject = JSON.parse(xhr.responseText);
+            userId = jsonObject.id;
+            firstName = jsonObject.firstName;
+            lastName = jsonObject.lastName;
+            saveCookie();
+            document.getElementById("signupResult").innerHTML = "User added";
+            window.location.href = "color.html";
+            return;
+        }
+
+        document.getElementById("signupResult").innerHTML = "Signup failed.";
+    };
+
+    xhr.send(jsonPayload);
+}
+
+
 function saveCookie()
 {
 	let minutes = 20;
@@ -183,3 +236,4 @@ function searchColor()
 	}
 	
 }
+
