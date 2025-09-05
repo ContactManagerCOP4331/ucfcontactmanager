@@ -25,8 +25,6 @@
           <title>PegasusPages Login</title>
           <!-- Tailwind CSS CDN -->
           <script src="https://cdn.tailwindcss.com"></script>
-          <script src="../js/code.js"></script>
-          <script src="../js/md5.js"></script>
 
           <!-- External CSS file -->
           <link rel="stylesheet" href="../css/styles.css" />
@@ -373,6 +371,7 @@
               </div>
 
               <div id="loginResult" class="text-sm text-red-400 h-5"></div>
+              <div id="authResult" class="text-sm h-5"></div>
 
               <button id="main-action-btn" class="yellow-button w-full py-3" onclick="doLogin()">
                 Sign In
@@ -425,6 +424,8 @@
               showLogin();
             });
           </script>
+          <script src="../js/md5.js"></script>
+          <script src="../js/code.js"></script>
         </body>
       </html>
     </body>
