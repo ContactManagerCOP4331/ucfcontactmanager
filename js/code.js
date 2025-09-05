@@ -41,7 +41,7 @@ function doLogin()
       firstName = jsonObject.firstName || "";
       lastName  = jsonObject.lastName  || "";
       saveCookie();
-      window.location.href = "color.html";
+      window.location.href = "contact.html";
     } else {
       document.getElementById("loginResult").innerHTML = "Login failed.";
     }
@@ -334,6 +334,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
