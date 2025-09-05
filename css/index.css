@@ -440,3 +440,7 @@ footer p {
     gap: 4px;
   }
 }
+
+.darker-img {
+  filter: brightness(70%);
+}
