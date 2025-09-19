@@ -138,7 +138,7 @@
         <div class="search-section w-full max-w-4xl mx-auto px-4 flex items-center justify-between">
             <input type="text" placeholder="Enter name" class="input-field w-full max-w-3xl mr-4" id="searchText" />
             <div class="flex space-x-2 search-buttons">
-                <button class="circular-button" id="searchBtn" type="button">
+                <button class="circular-button" id="searchBtn" type="button" onclick="searchContacts()">
                     <!-- Magnifying glass icon -->
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -155,11 +155,7 @@
                     </svg>
                 </button>
             </div>
-            <script>
-            document.getElementById('searchBtn').onclick = function() {
-                searchContacts();
-            };
-            </script>
+            
         </div>
 
         <div class="addContacts" id="addContactsSection" style="display:none;">
