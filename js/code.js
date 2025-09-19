@@ -13,7 +13,7 @@ function doLogin()
   
   const login = document.getElementById("loginName").value.trim();
   const password = document.getElementById("loginPassword").value;
-
+  localStorage.setItem("loginName", login);
   
   const hash = md5(password);
 
@@ -625,6 +625,7 @@ function validContact(firstName, lastName, phone, email) {
     return true;
 
 }
+
 
 
 
