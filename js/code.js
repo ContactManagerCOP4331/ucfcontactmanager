@@ -352,7 +352,7 @@ function addContact() {
     let firstName = document.getElementById("contactTextFirst").value;
     let lastName = document.getElementById("contactTextLast").value;
     let phoneNumber = document.getElementById("contactTextNumber").value;
-    let emailAdd = document.getElementById("contactTextEmail").value;
+    let emailAddress = document.getElementById("contactTextEmail").value;
 
     if (!validContact(firstName, lastName, phoneNumber, emailAdd)) {
         console.log("INVALID FIRST NAME, LAST NAME, PHONE, OR EMAIL SUBMITTED");
@@ -362,7 +362,7 @@ function addContact() {
         firstName: firstName,
         lastName: lastName,
         phoneNumber: phoneNumber,
-        emailAddress: emailAdd,
+        emailAddress: emailAddress,
         userId: userId
     };
 
