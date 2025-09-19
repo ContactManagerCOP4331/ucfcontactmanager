@@ -421,9 +421,9 @@ function loadContacts() {
                     rows += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
                     rows += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
                     rows += "<td>" +
-                        "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='editRow(" + i + ")'>" + "<span class='glyphicon glyphicon-edit'></span>" + "</button>" +
-                        "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='saveRow(" + i + ")' style='display: none'>" + "<span class='glyphicon glyphicon-saved'></span>" + "</button>" +
-                        "<button type='button' onclick='deleteRow(" + i + ")' class='w3-button w3-circle w3-amber'>" + "<span class='glyphicon glyphicon-trash'></span> " + "</button>" + "</td>";
+                        "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='editRow(" + i + ")'>" + "Edit" + "</button>" +
+                        "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='saveRow(" + i + ")' style='display: none'>" + "Save" + "</button>" +
+                        "<button type='button' onclick='deleteRow(" + i + ")' class='w3-button w3-circle w3-amber'>" + "Delete" + "</button>" + "</td>";
                     rows += "</tr>";
                 }
                 document.getElementById("tbody").innerHTML = rows;
