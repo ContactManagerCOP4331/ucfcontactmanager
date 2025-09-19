@@ -1,35 +1,15 @@
 /* Base styles */
 body {
   padding: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
   font-size: 32px;
   background: linear-gradient(135deg, black, gold);
   color: white;
   font-family: "MedievalSharp", "Times New Roman", serif;
   position: relative;
   overflow-x: hidden;
-  align-items: center;
-  justify-content: center;
+  overflow-y: auto;
   margin-bottom: 1rem;
-}
-
-.addContacts {
-    align-self: center;
-}
-
-#addContact {
-    font-family: 'Montserrat';
-    display: none;
-    border-radius: 17px;
-    position: relative;
-    background: rgba(234, 207, 155, 0.9);
-    max-width: 350px;
-    margin: 0 auto 50px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 /* Main content area */
@@ -38,21 +18,47 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
   max-width: 1200px;
   width: 100%;
   padding: 3rem 2rem;
   box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Ensure header stays visually above and separated */
+.main-content-area h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: #fcd34d;
+  font-family: "MedievalSharp", serif;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 8px #000;
+}
+
+.addContacts {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Search section */
 .search-section {
   height: 70px;
-  width: 700px;
+  max-width: 600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .search-container {
@@ -92,7 +98,7 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-left: 1rem;
+  margin: 0 auto;
 }
 
 .circular-button {
@@ -170,9 +176,12 @@ nav svg {
 
 /* Table styling */
 .contact-table {
+  max-width: 700px;
   width: 100%;
-  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   border-spacing: 0 0.1rem;
+  text-align: center;
 }
 
 .contact-table th,
@@ -268,6 +277,57 @@ nav svg {
     opacity: 1;
     transform: scale(1.2) rotate(180deg);
   }
+}
+
+/* Add Contact Form Styling */
+.addContacts {
+  background-color: #2a2a3e;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addContacts input[type="text"] {
+  background-color: #1a1a2e;
+  border: 1px solid #4a4a6a;
+  border-radius: 0.75rem;
+  color: white;
+  font-family: "MedievalSharp";
+  font-size: 20px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  width: 90%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.addContacts input[type="text"]:focus {
+  border-color: #fcd34d;
+  outline: none;
+}
+
+#addContactButton {
+  background-color: #fcd34d;
+  color: #1a1a2e;
+  font-family: "MedievalSharp";
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#addContactButton:hover {
+  background-color: #fbbf24;
+  color: #000;
 }
 
 /* Responsive design */
