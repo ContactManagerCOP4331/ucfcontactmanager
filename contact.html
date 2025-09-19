@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
         <script src="../js/code.js" /></script>
+		<script>document.getElementById("displayName").textContent = localStorage.getItem("loginName");</script>
 </head>
 
 <body class="bg-[#1a1a2e] text-[#e0e0e0] font-inter">
@@ -130,7 +131,7 @@
     <!-- Main Content Area -->
     <div class="main-content-area flex flex-col items-center">
         <h1 class="text-4xl font-bold text-center mb-8 mt-4 text-[#fcd34d]">
-            Welcome [User]!
+            Welcome <span id="displayName"></span>!
         </h1>
 
         <!-- Search Section -->
