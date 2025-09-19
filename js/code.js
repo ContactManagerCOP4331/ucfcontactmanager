@@ -354,7 +354,7 @@ function addContact() {
     let phoneNumber = document.getElementById("contactTextNumber").value;
     let emailAddress = document.getElementById("contactTextEmail").value;
 
-    if (!validContact(firstName, lastName, phoneNumber, emailAdd)) {
+    if (!validContact(firstName, lastName, phoneNumber, emailAddress)) {
         console.log("INVALID FIRST NAME, LAST NAME, PHONE, OR EMAIL SUBMITTED");
         return;
     }
