@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/contact.css" />
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
-    <script src="/js/code.js"></script>
+    <script src="../js/code.js"></script>
 </head>
 
 <body class="bg-[#1a1a2e] text-[#e0e0e0] font-inter">
@@ -136,10 +136,9 @@
 
         <!-- Search Section -->
         <div class="search-section w-full max-w-4xl mx-auto px-4 flex items-center justify-between">
-            <input type="text" placeholder="Enter name" class="input-field w-full max-w-3xl mr-4" id="searchText"
-                onkeyup="searchContacts()" onchange="searchContacts()" oninput="searchContacts()" />
+            <input type="text" placeholder="Enter name" class="input-field w-full max-w-3xl mr-4" id="searchText" />
             <div class="flex space-x-2 search-buttons">
-                <button class="circular-button">
+                <button class="circular-button" id="searchBtn" type="button">
                     <!-- Magnifying glass icon -->
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +146,7 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </button>
-                <button class="circular-button" onclick="presentTable()">
+                <button class="circular-button" id="showAddContactBtn" type="button" onclick="toggleAddContact()">
                     <!-- Plus symbol icon -->
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -156,9 +155,14 @@
                     </svg>
                 </button>
             </div>
+            <script>
+            document.getElementById('searchBtn').onclick = function() {
+                searchContacts();
+            };
+            </script>
         </div>
 
-        <div class="addContacts">
+        <div class="addContacts" id="addContactsSection" style="display:none;">
 			<form id="addContact" action="" method="post">
 				<input type="text" id="contactTextFirst" placeholder="First Name" required>
 				<input type="text" id="contactTextLast" placeholder="Last Name" required>
@@ -207,6 +211,12 @@
             </table>
         </div>
     </div>
+    <script>
+function toggleAddContact() {
+  var section = document.getElementById('addContactsSection');
+  section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+}
+</script>
 </body>
 
 </html>
