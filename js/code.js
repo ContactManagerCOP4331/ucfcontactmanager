@@ -412,28 +412,34 @@ function loadContacts() {
                     console.log(jsonObject.error);
                     return;
                 }
-                let text = "<table border='1'>"
+                let rows = "";
                 for (let i = 0; i < jsonObject.results.length; i++) {
-                    ids[i] = jsonObject.results[i].ID
-                    text += "<tr id='row" + i + "'>"
-                    text += "<td id='first_Name" + i + "'><span>" + jsonObject.results[i].FirstName + "</span></td>";
-                    text += "<td id='last_Name" + i + "'><span>" + jsonObject.results[i].LastName + "</span></td>";
-                    text += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
-                    text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
-                    text += "<td>" +
+                    ids[i] = jsonObject.results[i].ID;
+                    rows += "<tr id='row" + i + "'>";
+                    rows += "<td id='first_Name" + i + "'><span>" + jsonObject.results[i].FirstName + "</span></td>";
+                    rows += "<td id='last_Name" + i + "'><span>" + jsonObject.results[i].LastName + "</span></td>";
+                    rows += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
+                    rows += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
+                    rows += "<td>" +
                         "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='editRow(" + i + ")'>" + "<span class='glyphicon glyphicon-edit'></span>" + "</button>" +
                         "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='saveRow(" + i + ")' style='display: none'>" + "<span class='glyphicon glyphicon-saved'></span>" + "</button>" +
                         "<button type='button' onclick='deleteRow(" + i + ")' class='w3-button w3-circle w3-amber'>" + "<span class='glyphicon glyphicon-trash'></span> " + "</button>" + "</td>";
-                    text += "<tr/>"
+                    rows += "</tr>";
                 }
-                text += "</table>"
-                document.getElementById("tbody").innerHTML = text;
+                document.getElementById("tbody").innerHTML = rows;
             }
         };
         xhr.send(jsonPayload);
     } catch (err) {
         console.log(err.message);
     }
+}
+
+function showTable() {
+    var x = document.getElementById("addContact");
+    var contacts = document.getElementById("contacts");
+    if (x) x.style.display = "none";
+    if (contacts) contacts.style.display = "table";
 }
 
 function editRow(id) {
