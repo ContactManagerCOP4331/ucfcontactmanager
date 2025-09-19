@@ -435,7 +435,7 @@ function loadContacts() {
     }
 }
 
-function edit_row(id) {
+function editRow(id) {
     document.getElementById("edit_button" + id).style.display = "none";
     document.getElementById("save_button" + id).style.display = "inline-block";
 
@@ -455,7 +455,7 @@ function edit_row(id) {
     phone.innerHTML = "<input type='text' id='phone_text" + id + "' value='" + phone_data + "'>"
 }
 
-function save_row(no) {
+function saveRow(no) {
     var namef_val = document.getElementById("namef_text" + no).value;
     var namel_val = document.getElementById("namel_text" + no).value;
     var email_val = document.getElementById("email_text" + no).value;
@@ -498,7 +498,7 @@ function save_row(no) {
     }
 }
 
-function delete_row(no) {
+function deleteRow(no) {
     var namef_val = document.getElementById("first_Name" + no).innerText;
     var namel_val = document.getElementById("last_Name" + no).innerText;
     nameOne = namef_val.substring(0, namef_val.length);
@@ -563,7 +563,7 @@ function searchContacts() {
     }
 }
 
-function validAddContact(firstName, lastName, phone, email) {
+function validContact(firstName, lastName, phone, email) {
 
     var fNameErr = lNameErr = phoneErr = emailErr = true;
 
@@ -625,5 +625,6 @@ function validAddContact(firstName, lastName, phone, email) {
     return true;
 
 }
+
 
 
