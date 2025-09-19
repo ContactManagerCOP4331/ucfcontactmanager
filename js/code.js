@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let ids = [];
 
 function doLogin()
 {
@@ -336,8 +337,8 @@ function searchColor()
 }
 
 function presentTable() {
-	var x = document.getElementById("addContact");
-	var contacts = document.getElementById("contacts-table");
+    var x = document.getElementById("addContact");
+    var contacts = document.getElementById("contacts");
 	if (x.style.display === "none"){
 		x.style.display = "block";
 		contacts.style.display = "none";
@@ -348,12 +349,12 @@ function presentTable() {
 }
 
 function addContact() {
-	let firstName = document.getElementById("contactFirst").value;
-    let lastName = document.getElementById("contactLast").value;
-    let phoneNumber = document.getElementById("contactNumber").value;
-    let emailAdd = document.getElementById("contactEmail").value;
+    let firstName = document.getElementById("contactTextFirst").value;
+    let lastName = document.getElementById("contactTextLast").value;
+    let phoneNumber = document.getElementById("contactTextNumber").value;
+    let emailAdd = document.getElementById("contactTextEmail").value;
 
-    if (!validAddContact(firstName, lastName, phoneNumber, emailAdd)) {
+    if (!validContact(firstName, lastName, phoneNumber, emailAdd)) {
         console.log("INVALID FIRST NAME, LAST NAME, PHONE, OR EMAIL SUBMITTED");
         return;
     }
@@ -361,7 +362,7 @@ function addContact() {
         firstName: firstName,
         lastName: lastName,
         phoneNumber: phoneNumber,
-        emailAddress: email,
+        emailAddress: emailAdd,
         userId: userId
     };
 
@@ -420,8 +421,8 @@ function loadContacts() {
                     text += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
                     text += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
                     text += "<td>" +
-                        "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='edit_row(" + i + ")'>" + "<span class='glyphicon glyphicon-edit'></span>" + "</button>" +
-                        "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='save_row(" + i + ")' style='display: none'>" + "<span class='glyphicon glyphicon-saved'></span>" + "</button>" +
+                        "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='editRow(" + i + ")'>" + "<span class='glyphicon glyphicon-edit'></span>" + "</button>" +
+                        "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='saveRow(" + i + ")' style='display: none'>" + "<span class='glyphicon glyphicon-saved'></span>" + "</button>" +
                         "<button type='button' onclick='deleteRow(" + i + ")' class='w3-button w3-circle w3-amber'>" + "<span class='glyphicon glyphicon-trash'></span> " + "</button>" + "</td>";
                     text += "<tr/>"
                 }
@@ -480,7 +481,7 @@ function saveRow(no) {
 
     let jsonPayload = JSON.stringify(tmp);
 
-    let url = urlBase + '/UpdateContacts.' + extension;
+    let url = urlBase + '/UpdateContact.' + extension;
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -514,7 +515,7 @@ function deleteRow(no) {
 
         let jsonPayload = JSON.stringify(tmp);
 
-        let url = urlBase + '/DeleteContacts.' + extension;
+    let url = urlBase + '/DeleteContact.' + extension;
 
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
