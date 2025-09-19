@@ -418,8 +418,8 @@ function loadContacts() {
                     rows += "<tr id='row" + i + "'>";
                     rows += "<td id='first_Name" + i + "'><span>" + jsonObject.results[i].FirstName + "</span></td>";
                     rows += "<td id='last_Name" + i + "'><span>" + jsonObject.results[i].LastName + "</span></td>";
-                    rows += "<td id='email" + i + "'><span>" + jsonObject.results[i].EmailAddress + "</span></td>";
-                    rows += "<td id='phone" + i + "'><span>" + jsonObject.results[i].PhoneNumber + "</span></td>";
+                    rows += "<td id='email" + i + "'><span>" + jsonObject.results[i].Email + "</span></td>";
+                    rows += "<td id='phone" + i + "'><span>" + jsonObject.results[i].Phone + "</span></td>";
                     rows += "<td>" +
                         "<button type='button' id='edit_button" + i + "' class='w3-button w3-circle w3-lime' onclick='editRow(" + i + ")'>" + "Edit" + "</button>" +
                         "<button type='button' id='save_button" + i + "' value='Save' class='w3-button w3-circle w3-lime' onclick='saveRow(" + i + ")' style='display: none'>" + "Save" + "</button>" +
