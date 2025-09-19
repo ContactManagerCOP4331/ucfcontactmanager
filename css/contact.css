@@ -19,6 +19,19 @@ body {
     align-self: center;
 }
 
+#addContact {
+    font-family: 'Montserrat';
+    display: none;
+    border-radius: 17px;
+    position: relative;
+    background: rgba(234, 207, 155, 0.9);
+    max-width: 350px;
+    margin: 0 auto 50px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
 /* Main content area */
 .main-content-area {
   display: flex;
