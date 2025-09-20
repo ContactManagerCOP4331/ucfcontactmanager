@@ -548,12 +548,16 @@ function searchContacts() {
     const selections = content.value.toUpperCase().split(' ');
     const table = document.getElementById("contacts");
     const tr = table.getElementsByTagName("tr");// Table Row
+    const tbody = document.getElementById("tbody");
 
-    if (!selections){
-        if(table) table.style.display = "none";
+    if (!tbody) return;
+
+    if(!selections){
+        tbody
         return;
     }
-    if(table) table.style.display = "table";
+
+    tbody.style.display = "table-row-group";
 
     for (let i = 0; i < tr.length; i++) {
         const td_fn = tr[i].getElementsByTagName("td")[0];// Table Data: First Name
