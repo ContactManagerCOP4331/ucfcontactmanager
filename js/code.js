@@ -549,6 +549,12 @@ function searchContacts() {
     const table = document.getElementById("contacts");
     const tr = table.getElementsByTagName("tr");// Table Row
 
+    if (!selections){
+        if(table) table.style.display = "none";
+        return;
+    }
+    if(table) table.style.display = "table";
+
     for (let i = 0; i < tr.length; i++) {
         const td_fn = tr[i].getElementsByTagName("td")[0];// Table Data: First Name
         const td_ln = tr[i].getElementsByTagName("td")[1];// Table Data: Last Name
