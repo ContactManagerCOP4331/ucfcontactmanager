@@ -195,6 +195,11 @@ function toggleAddContact() {
   section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
 }
 </script>
+<script>
+    window.onload = function() {
+        loadContacts();
+    };
+</script>
 </body>
 
 </html>
