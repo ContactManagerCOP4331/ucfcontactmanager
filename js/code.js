@@ -569,10 +569,10 @@ function searchContacts() {
             tr[i].style.display = "none";
 
             for (selection of selections) {
-                if (txtValue_fn.toUpperCase().indexOf(selection) > -1) {
+                if (txtValue_fn.toUpperCase().startsWith(selection)) {
                     tr[i].style.display = "";
                 }
-                if (txtValue_ln.toUpperCase().indexOf(selection) > -1) {
+                if (txtValue_ln.toUpperCase().startsWith(selection)) {
                     tr[i].style.display = "";
                 }
             }
