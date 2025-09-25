@@ -347,15 +347,17 @@ function searchColor()
 }
 
 function presentTable() {
-    var x = document.getElementById("addContact");
+    var section = document.getElementById("addContactsSection");
     var contacts = document.getElementById("contacts");
-	if (x.style.display === "none"){
-		x.style.display = "block";
-		contacts.style.display = "none";
-	} else {
-		x.style.display = "none";
-		contacts.style.display = "block";
-	}
+    if (!section || !contacts) return;
+
+    if (section.style.display === "none" || section.style.display === "") {
+        section.style.display = "block";
+        contacts.style.display = "none";
+    } else {
+        section.style.display = "none";
+        contacts.style.display = "table";
+    }
 }
 
 function addContact() {
@@ -446,9 +448,9 @@ function loadContacts() {
 }
 
 function showTable() {
-    var x = document.getElementById("addContact");
+    var section = document.getElementById("addContactsSection");
     var contacts = document.getElementById("contacts");
-    if (x) x.style.display = "none";
+    if (section) section.style.display = "none";    // hide the whole section (not the form)
     if (contacts) contacts.style.display = "table";
 }
 
