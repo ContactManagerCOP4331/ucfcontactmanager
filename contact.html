@@ -196,7 +196,16 @@ function toggleAddContact() {
 }
 </script>
 <script>
-    
+    window.onload = function() {
+      // read cookie (sets userId) if available
+      if (typeof readCookie === "function") readCookie();
+      // fallback to localStorage if cookie didn't set userId
+      if ((!userId || userId < 1) && localStorage.getItem("userId")) {
+        userId = parseInt(localStorage.getItem("userId"), 10);
+      }
+      // load contacts for the correct user
+      if (typeof loadContacts === "function") loadContacts();
+    };
 </script>
 </body>
 
