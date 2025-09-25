@@ -28,23 +28,30 @@ function doLogin()
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   xhr.onreadystatechange = function() {
-    if (this.readyState !== 4) return;
+    if (this.readyState === XMLHttpRequest.DONE) {
+      if (this.status === 200) {
+        const jsonObject = JSON.parse(xhr.responseText || "{}");
+        userId = jsonObject.id || 0;
 
-    if (this.status === 200) {
-      const jsonObject = JSON.parse(xhr.responseText || "{}");
-      userId = jsonObject.id || 0;
+        if (userId < 1) {
+          document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+          return;
+        }
 
-      if (userId < 1) {
-        document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-        return;
+        firstName = jsonObject.firstName || "";
+        lastName  = jsonObject.lastName  || "";
+
+        // persist for other pages
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("loginName", jsonObject.login || localStorage.getItem("loginName") || "");
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+
+        saveCookie();
+        window.location.href = "contact.html";
+      } else {
+        document.getElementById("loginResult").innerHTML = "Login failed.";
       }
-
-      firstName = jsonObject.firstName || "";
-      lastName  = jsonObject.lastName  || "";
-      saveCookie();
-      window.location.href = "contact.html";
-    } else {
-      document.getElementById("loginResult").innerHTML = "Login failed.";
     }
   };
   xhr.send(jsonPayload);
@@ -78,22 +85,25 @@ function doSignup() {
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
     xhr.onreadystatechange = function () {
-        if (this.readyState !== 4) return;
+        if (this.readyState === XMLHttpRequest.DONE) {
+            if (this.status === 200 || this.status === 201) {
+                let jsonObject = JSON.parse(xhr.responseText || "{}");
+                userId = jsonObject.id || 0;
+                firstName = jsonObject.firstName || "";
+                lastName = jsonObject.lastName || "";
 
-        if (this.status === 409) {
-            document.getElementById("signupResult").innerHTML = "User already exists";
-            return;
-        }
+                // persist for other pages
+                localStorage.setItem("userId", userId);
+                localStorage.setItem("firstName", firstName);
+                localStorage.setItem("lastName", lastName);
 
-        if (this.status === 200 || this.status === 201) {
-            let jsonObject = JSON.parse(xhr.responseText);
-            userId = jsonObject.id;
-            firstName = jsonObject.firstName;
-            lastName = jsonObject.lastName;
-            saveCookie();
-            document.getElementById("signupResult").innerHTML = "User added";
-            window.location.href = "contact.html";
-            return;
+                saveCookie();
+                document.getElementById("signupResult").innerHTML = "User added";
+                window.location.href = "contact.html";
+                return;
+            } else {
+                document.getElementById("signupResult").innerHTML = "Signup failed.";
+            }
         }
 
         document.getElementById("signupResult").innerHTML = "Signup failed.";
