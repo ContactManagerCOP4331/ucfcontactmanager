@@ -7,7 +7,7 @@ const teamMembers = [
     description:
       "Led the overall project architecture and coordinated team efforts. Implemented the core authentication system and managed the development timeline to ensure successful delivery.",
     image:
-      "images\Amer.jpg",
+      "images/Amer.jpg",
     icon: "users",
   },
   {
@@ -18,7 +18,7 @@ const teamMembers = [
     description:
       "Designed and developed the user interface components using HTML, CSS, and JavaScript. Created responsive layouts and implemented smooth animations for enhanced user experience.",
     image:
-      "images\Evan.png",
+      "images/Evan.png",
     icon: "code",
   },
   {
@@ -29,7 +29,7 @@ const teamMembers = [
     description:
       "Engineered robust server-side systems and REST APIs to power the application. Integrated authentication and authorization mechanisms, designed database schemas, and ensured secure and efficient data flow between the frontend and backend.",
     image:
-      "images\Heather.jpg",
+      "images/Heather.jpg",
     icon: "braces",
   },
   {
@@ -40,7 +40,7 @@ const teamMembers = [
     description:
       "Specialized in building interactive features and optimizing performance on the client side. Translated design mockups into functional components, implemented state management, and fine-tuned rendering to deliver a polished and reliable user interface.",
     image:
-      "images\Laila.jpeg",
+      "images/Laila.jpeg",
     icon: "code",
   },
   {
@@ -51,7 +51,7 @@ const teamMembers = [
     description:
       "Focused on designing scalable API endpoints to connect core services. Implemented data validation, error handling, and optimized queries to improve performance. Collaborated closely with frontend developers to provide consistent and reliable API responses.",
     image:
-      "images\Dylan.jpg",
+      "images/Dylan.jpg",
     icon: "braces",
   },
 ];
