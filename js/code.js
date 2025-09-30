@@ -64,7 +64,7 @@ function doSignup() {
     let password = document.getElementById("signup-password").value; // not "password"
 
     if (!validSignUpForm(firstName, lastName, username, password)) {
-        document.getElementById("signupResult").innerHTML = "Invalid signup";
+        document.getElementById("signupResult").innerHTML = "Invalid signup. Please make sure your password includes a character and a number.";
         return;
     }
 
@@ -654,6 +654,7 @@ function validContact(firstName, lastName, phone, email) {
     return true;
 
 }
+
 
 
 
